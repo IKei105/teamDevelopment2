@@ -1,0 +1,78 @@
+/* pタグの初期化 */
+p {
+    padding: 0;
+    margin: 0;
+}
+
+/* 各メッセージ行全体の枠 */
+.message-section {
+    display: flex;
+    align-items: center;
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+/* ユーザーアイコン部分（中央寄せ） */
+.user-profile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+
+/* 丸いアイコン画像 */
+.user-profile-image img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* アイコン以外の全体 */
+.message-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+/* 左側の：ユーザー名＋メッセージ */
+.user-latest-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    position: relative;
+}
+
+/* ユーザー名（アイコンの上限近く） */
+.username {
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    top: 6px;
+}
+
+/* 最新メッセージ（アイコンの中間〜下限に） */
+.latest-message {
+    font-size: 13px;
+    color: #555;
+    position: relative;
+    top: 28px;
+}
+
+/* 最終投稿時間 */
+.message-latest-time {
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    color: #666;
+    position: relative;
+    top: 6px; /* ← ユーザー名と同じ高さに揃える */
+}
