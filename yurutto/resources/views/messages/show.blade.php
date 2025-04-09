@@ -21,7 +21,7 @@
         @csrf
         <input type="hidden" name="receiver_id" value="{{ $user->id }}"> -->
 
-        <div>
+        <div class="message-input">
             <input type="text" name="message" id="message-input" required>
             <button type="submit" id="send-button">送信</button>
         </div>

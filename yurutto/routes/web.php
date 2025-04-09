@@ -20,3 +20,6 @@ Route::get('/messages/{user}', [MessageController::class, 'show'])->middleware('
 Route::post('/messages', [MessageController::class, 'store'])->middleware('auth')->name('messages.store');
 Route::post('/send-message', [MessageController::class, 'sendMessage'])->middleware('auth');
 Route::get('/fetch-messages/{user}', [MessageController::class, 'fetchNewMessages'])->middleware('auth');
+
+//検索関連
+Route::get('/search', [RecruitmentController::class, 'search'])->name('search');

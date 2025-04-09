@@ -54,3 +54,14 @@ ul,li {
   .chat .status {
     text-align: right;            /* 右寄せにする */
   }
+
+
+
+.message-input {
+    max-width: 100%;
+    background: #eee;
+}
+
+.message-input input {
+    width: 95%;
+}
