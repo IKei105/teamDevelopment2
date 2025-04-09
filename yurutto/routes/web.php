@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\RecruitmentController;
 
 Route::get('/register', function () {
     return view('auth.register');
@@ -22,4 +24,8 @@ Route::post('/send-message', [MessageController::class, 'sendMessage'])->middlew
 Route::get('/fetch-messages/{user}', [MessageController::class, 'fetchNewMessages'])->middleware('auth');
 
 //検索関連
-Route::get('/search', [RecruitmentController::class, 'search'])->name('search');
+Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+Route::get('/search/result', [SearchController::class, 'search'])->name('search.result');
+
+Route::get('/recruitments/create', [RecruitmentController::class, 'create'])->name('recruitments.create');
+Route::post('/recruitments', [RecruitmentController::class, 'store'])->name('recruitments.store');
