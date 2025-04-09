@@ -63,7 +63,7 @@ class MessageController extends Controller
         return redirect()->route('messages.show', $request->receiver_id);
     }
 
-    public function message(Request $request)
+    public function sendMessage(Request $request)
     {
         $request->validate([
             'receiver_id' => 'required|exists:users,id',
@@ -80,6 +80,23 @@ class MessageController extends Controller
         return response()->json([
             'success' => true,
             'message' => $message,
+        ]);
+    }
+
+    public function fetchNewMessages(Request $request, \App\Models\User $user)
+    {
+        $myId = auth()->id();
+        $lastMessageId = $request->query('last_id'); // クエリパラメータで取得
+
+        $newMessages = \App\Models\Message::where('id', '>', $lastMessageId)
+            ->where(function ($query) use ($myId, $user) {
+                $query->where('sender_id', $user->id)->where('receiver_id', $myId);
+            })
+            ->orderBy('id')
+            ->get();
+
+        return response()->json([
+            'messages' => $newMessages
         ]);
     }
 

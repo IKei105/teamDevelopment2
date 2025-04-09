@@ -19,3 +19,4 @@ Route::get('/messages', [MessageController::class, 'list'])->middleware('auth')-
 Route::get('/messages/{user}', [MessageController::class, 'show'])->middleware('auth')->name('messages.show');
 Route::post('/messages', [MessageController::class, 'store'])->middleware('auth')->name('messages.store');
 Route::post('/send-message', [MessageController::class, 'sendMessage'])->middleware('auth');
+Route::get('/fetch-messages/{user}', [MessageController::class, 'fetchNewMessages'])->middleware('auth');
