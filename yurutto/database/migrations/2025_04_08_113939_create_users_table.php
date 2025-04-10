@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('userid')->unique(); // ログイン用ID
-            $table->string('name');             // 表示名
-            $table->string('password');         // ハッシュ化パスワード
+            $table->string('userid')->unique();       // ログイン用ID
+            $table->string('name');                   // 表示名
+            $table->string('password');               // ハッシュ化パスワード
+            $table->string('profile_image')->nullable(); // プロフィール画像（ファイル名など）
+            $table->string('residence')->nullable(); // 住んでる地域（例：東京都新宿区など）
+            $table->string('favorite_sport')->nullable(); // 好きなスポーツ
+            $table->string('mood')->nullable();          // 温度感（ゆるく、ガチなど）
+            $table->string('introduction')->nullable();  // 自己紹介
+            $table->integer('rating')->default(0);       // 評価（int）
             $table->timestamps();
         });
     }
