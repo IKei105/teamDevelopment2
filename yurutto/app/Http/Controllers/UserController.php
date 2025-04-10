@@ -14,19 +14,25 @@ class UserController extends Controller
 {
     public function register(Request $request)
     {
-        
-        $request->validate([
-            'userid' => 'required|string|max:255|unique:users,userid',
-            'name' => 'required|string|max:255',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-
+    
+        $imagePath = null;
+        if ($request->hasFile('profile_image')) {
+            $imagePath = $request->file('profile_image')->store('userProfileImages', 'public');
+        }
+    
         User::create([
-            'userid' => $request['userid'],
-            'name' => $request['name'],
-            'password' => Hash::make($request['password']),
+            'userid' => $request->userid,
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'residence' => $request->residence,
+            'favorite_sport' => $request->favorite_sport,
+            'mood' => $request->mood,
+            'introduction' => $request->introduction,
+            'rating' => 0, // 初期値
+            'profile_image' => $imagePath,
+            
         ]);
-
+    
         return redirect('/login');
     }
 
@@ -58,6 +64,12 @@ class UserController extends Controller
     {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function profile()
+    {
+        $user = auth()->user(); // ログイン中のユーザー情報を取得
+        return view('profile', compact('user'));
     }
 
 }

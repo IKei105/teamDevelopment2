@@ -29,3 +29,6 @@ Route::get('/search/result', [SearchController::class, 'search'])->name('search.
 
 Route::get('/recruitments/create', [RecruitmentController::class, 'create'])->name('recruitments.create');
 Route::post('/recruitments', [RecruitmentController::class, 'store'])->name('recruitments.store');
+
+
+Route::get('/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
