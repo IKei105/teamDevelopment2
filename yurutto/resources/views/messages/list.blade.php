@@ -17,7 +17,7 @@
                 if ($timestamp->isToday()) {
                     $displayTime = $timestamp->format('H:i');
                 } else {
-                    $displayTime = $timestamp->format('Y/m/d');
+                    $displayTime = $timestamp->format('m/d');
                 }
             @endphp
             <div class="message-section">
