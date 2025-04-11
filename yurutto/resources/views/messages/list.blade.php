@@ -6,39 +6,37 @@
     <title>チャット一覧</title>
 </head>
 <body>
-    @foreach($latestMessages as $message)
-        @php
-            $isSender = $message->sender_id === $userId;
-            $otherUser = $isSender ? $message->receiver : $message->sender;
-            $timestamp = $message->created_at;
-            $now = \Illuminate\Support\Carbon::now();
+    <div class="main-section">
+        @foreach($latestMessages as $message)
+            @php
+                $isSender = $message->sender_id === $userId;
+                $otherUser = $isSender ? $message->receiver : $message->sender;
+                $timestamp = $message->created_at;
+                $now = \Illuminate\Support\Carbon::now();
 
-            if ($timestamp->isToday()) {
-                $displayTime = $timestamp->format('H:i');
-            } else {
-                $displayTime = $timestamp->format('Y/m/d');
-            }
-        @endphp
-
-        <div style="">
-            <div><strong>{{ $otherUser->name }}</strong></div>
-            <div>{{ $message->message }}</div>
-            <div>{{ $displayTime }}</div>
-        </div>
-        <div class="message-section">
-            <div class="user-profile-image">
-                <img src="{{ asset('storage/userProfileImages/neko.jpeg') }}" alt="">
+                if ($timestamp->isToday()) {
+                    $displayTime = $timestamp->format('H:i');
+                } else {
+                    $displayTime = $timestamp->format('Y/m/d');
+                }
+            @endphp
+            <div class="message-section">
+                <a href="{{ route('messages.show', ['user' => $otherUser->id]) }}">
+                    <div class="user-profile-image">
+                        <img src="{{ asset('storage/userProfileImages/neko.jpeg') }}" alt="">
+                    </div>
+                    <div class="message-info">
+                        <div class="user-latest-message">
+                            <p class="username">{{ $otherUser->name }}</p>
+                            <p class="latest-message">{{ $message->message }}</p>
+                        </div>
+                        <div class="message-latest-time">
+                            <p>{{ $displayTime }}</p>
+                        </div>
+                    </div>
+                </a>    
             </div>
-            <div class="message-info">
-                <div class="user-latest-message">
-                    <p class="username">ユーザー名</p>
-                    <p class="latest-message">お前を倒してやる！！！</p>
-                </div>
-                <div class="message-latest-time">
-                    <p>17:05</p>
-                </div>
-            </div>
-        </div>
-    @endforeach
+        @endforeach
+    </div>
 </body>
 </html>

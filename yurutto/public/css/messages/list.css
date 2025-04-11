@@ -4,6 +4,10 @@ p {
     margin: 0;
 }
 
+.main-section {
+    text-align: center;
+}
+
 /* 各メッセージ行全体の枠 */
 .message-section {
     display: flex;
@@ -75,4 +79,13 @@ p {
     color: #666;
     position: relative;
     top: 6px; /* ← ユーザー名と同じ高さに揃える */
+}
+
+.message-section a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* 下線を消す */
+    color: inherit; /* テキストカラー継承 */
+    width: 100%;
+    height: 100%;
 }

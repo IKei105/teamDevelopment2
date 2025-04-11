@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -19,6 +21,11 @@ body {
 
 .section {
     margin-bottom: 50px;
+}
+
+.title {
+    font-family: 'Kanit', sans-serif;
+    color: #FFA81D;
 }
 
 .userid-input, .username-input, .password-input, .residence-select, .favorite-input, .mood-input {
@@ -54,4 +61,8 @@ body {
 
 .logout {
     margin-top: 100px;
+}
+
+.hidden {
+    display: none;
 }
