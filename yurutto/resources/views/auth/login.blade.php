@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="main-section">
-    <h1>yurutto</h1>
+    <h1 class="title">yurutto</h1>
         <form method="POST" action="/login">
             @csrf
 

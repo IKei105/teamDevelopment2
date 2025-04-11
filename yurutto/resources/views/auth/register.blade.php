@@ -7,13 +7,15 @@
     </head>
     <body>
         <div class="main-section">
-        <h1>yurutto</h1>
+        <h1 class="title">yurutto</h1>
         <form method="POST" action="/register" enctype="multipart/form-data">
             @csrf
 
             <div class="section profile-image">
-                <label for="profile_image">プロフィール画像:</label>
-                <input class="input" type="file" id="profile_image" name="profile_image" accept="image/*">
+                <label for="profile_image">
+                    <img src="{{ asset('storage/userProfileImages/neko.jpeg') }}" alt="">
+                </label>
+                <input class="input hidden" type="file" id="profile_image" name="profile_image" accept="image/*">
             </div>
         
             <div class="section userid">

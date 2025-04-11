@@ -73,5 +73,7 @@
 
     <!-- 都道府県→市区町村 連動JS -->
     <script src="{{ asset('js/search/pref_city.js') }}"></script>
+    <script src="{{ asset('js/recruitments/create.js') }}"></script>
 </body>
+
 </html>
