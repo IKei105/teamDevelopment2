@@ -1,0 +1,63 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-section {
+    width: 600px;
+    height: 100vh;
+    background-image: url('/storage/userProfileImages/Group113.png'); /* ← ファイル名そのまま！ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #FFA81D;
+    margin-top: 60px;
+    text-shadow: 1px 1px 3px white;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn.register {
+    background: linear-gradient(to right, #FFA81D, #FFD81D);
+    color: white;
+}
+
+.btn.login {
+    background-color: white;
+    color: #FFA81D;
+    border: 2px solid #FFA81D;
+}

@@ -11,6 +11,10 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
+
 // ログイン関連
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');

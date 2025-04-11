@@ -11,6 +11,7 @@ class Recruitment extends Model
 
     protected $fillable = [
         'user_id',
+        'title', // ← 追加
         'sport_type',
         'prefecture',
         'city',

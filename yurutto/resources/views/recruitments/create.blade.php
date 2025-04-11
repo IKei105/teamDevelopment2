@@ -10,6 +10,11 @@
     <form action="{{ route('recruitments.store') }}" method="POST">
         @csrf
 
+        <div class="section">
+            <label for="title">タイトル</label>
+            <input type="text" name="title" id="title" required>
+        </div>
+
         <!-- 種目 -->
         <label for="sport_type">種目</label>
         <select name="sport_type" id="sport_type" required>

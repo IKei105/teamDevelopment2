@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('recruitments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');     // 募集した人のID（外部キー制約なし）
+            $table->string('title')->nullable(); // ← これを追加
             $table->string('sport_type');              // スポーツ種別
             $table->string('prefecture');              // 都道府県
             $table->string('city');                    // 市区町村

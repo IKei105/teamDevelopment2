@@ -9,18 +9,21 @@ textarea:focus {
 body {
     margin: 0;
     margin-bottom: 500px;
+    
+}
+
+.main-section {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
     background: linear-gradient(to bottom, 
       rgba(255, 168, 29, 0.3),  /* FFA81D, 透明度30% */
       rgba(255, 216, 29, 0.3)   /* FFD81D, 透明度30% */
     );
 }
 
-.main-section {
-    text-align: center;
-}
-
 .section {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .title {
@@ -29,28 +32,28 @@ body {
 }
 
 .userid-input, .username-input, .password-input, .residence-select, .favorite-input, .mood-input {
-    width: 670px;
-    height: 110px;
+    width: 500px;
+    height: 70px;
     font-size: 24px;
-    border: 2px solid #333;     /* 太めの線と色（#333は濃いグレー） */
+    border: 1px solid #6D6D6D;     /* 太めの線と色（#333は濃いグレー） */
     border-radius: 15px;         /* 角を丸くする */
     padding: 10px;               /* テキストとの余白 */
     box-sizing: border-box;   
 }
 
 .introduction-input {
-    width: 670px;
+    width: 500px;
     height: 400px;
     padding: 10px; 
-    border: 2px solid #333;     /* 太めの線と色（#333は濃いグレー） */
+    border: 1px solid #333;     /* 太めの線と色（#333は濃いグレー） */
     border-radius: 15px;   
     box-sizing: border-box;   
     font-size: 24px;
 }
 
 .submit-btn {
-    width: 670px;
-    height: 110px;
+    width: 500px;
+    height: 70px;
     border-radius: 55px; 
     font-size: 24px; 
     background-color: #FFA81D;

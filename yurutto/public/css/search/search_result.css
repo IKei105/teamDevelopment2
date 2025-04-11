@@ -1,0 +1,104 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.up {
+    text-align: center;
+    margin: 0 auto;
+    height: 50px;
+    background-color: #FFD81D;
+}
+
+.up h1 {
+    color: white;
+}
+
+.main-section {
+    width: 600px;
+    height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.icon-section {
+    background-color: black;
+}
+
+.icon {
+    padding-left: 25px;
+    width: 100px;        /* 画像サイズ：好きな値に変更可能 */
+    height: 100px;
+    object-fit: cover;   /* 中央でトリミングしてバランス良く表示 */
+    border-radius: 50%;  /* ← これがまんまるの決め手！ */
+    display: block;      /* 中央寄せやブロック要素として扱いやすくする */
+    line-height: 100px;
+}
+
+
+.info-section {
+    text-align: left;
+}
+
+.title {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.date, .area, .num, .mood {
+    display: inline;
+}
+
+.btn-participate, .btn-detail {
+    display: block;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.btn-participate,
+.btn-detail {
+    width: 150px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 12px; /* ← 角を丸くする */
+}
+
+
+.btn-detail {
+    background-color: #FFD81D;
+}
+
+.btn-participate {
+    background-color: #AFE7FF;
+}
