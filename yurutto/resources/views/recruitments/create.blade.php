@@ -36,7 +36,7 @@
                         </div>
                         <div class="sport_option" data-value="バドミントン" data-image="{{ asset('assets/images/pictogram/bato.png') }}">
                             <img src="{{ asset('assets/images/pictogram/bato.png') }}" alt="バドミントン">
-                            <span>テニス</span>
+                            <span>バドミントン</span>
                         </div>
                         <div class="sport_option" data-value="ジム" data-image="{{ asset('assets/images/pictogram/runnerMachine.png') }}">
                             <img src="{{ asset('assets/images/pictogram/runnerMachine.png') }}" alt="ジム">
