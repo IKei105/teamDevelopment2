@@ -64,54 +64,100 @@
             </div>
 
             <!-- 地域選択 -->
-            <div class="selector area_container">
+            <div class="selector area_container" id="area_selector">
                 <div class="image_container">
-                    <img class="area_logo"src="{{ asset('assets/images/logos/mapPin_logo.svg') }}" alt="地域">
+                    <img id="selected_area_image" class="area_logo"src="{{ asset('assets/images/logos/mapPin_logo.svg') }}" alt="地域">
                 </div>
-                <!-- 都道府県 -->
-                <label for="prefecture">地域</label>
-                <select id="prefecture" name="prefecture" required>
-                    <option value="">選択してください</option>
-                    <!-- JSで追加 -->
-                </select>
+                <input type="hidden" name="prefecture" id="prefecture" value="">
+                <input type="hidden" name="city" id="city" value="">
+                <label id="selected_area_label">地域</label>
+            </div>
 
-                <!-- 市区町村 -->
-                <label for="city"></label>
-                <select id="city" name="city" required>
-                    <option value="">先に都道府県を選択してください</option>
-                </select>
+            <!-- 地域オーバーレイ -->
+            <div class="overlay" id="area_overlay">
+                <div class="overlay_content">
+                    <button class="close_button" id="close_area_overlay">×</button>
+                    <h2 id="area_overlay_title">都道府県を選択してください</h2>
+                    <div class="area_options" id="area_options_container">
+                        <!-- 都道府県リスト / 市区町村リストをここに動的生成 -->
+                    </div>
+                </div>
             </div>
 
             <!-- 温度感 -->
-            <div class="selector mood">
+            <div class="selector mood" id="mood_selector">
                 <div class="image_container">
-                    <img class="mood_logo"src="{{ asset('assets/images/logos/smileIcon_logo.svg') }}" alt="楽しみ方">
+                    <img id="selected_mood_image" class="mood_logo"src="{{ asset('assets/images/logos/smileIcon_logo.svg') }}" alt="楽しみ方">
                 </div>
-                <label for="mood">楽しみ方</label>
-                <select name="mood" id="mood" required>
-                    <option value="">選択してください</option>
-                    <option value="初心者歓迎">初心者歓迎</option>
-                    <option value="ゆるく">ゆるく</option>
-                    <option value="ガチ">ガチ</option>
-                </select>
+                <input type="hidden" name="mood" id="mood" value="">
+                <label id="selected_mood_label">楽しみ方</label>
+            </div>
+            <!-- 楽しみ方オーバーレイ -->
+            <div class="overlay" id="mood_overlay">
+                <div class="overlay_content">
+                    <button class="close_button" id="close_mood_overlay">×</button>
+                    <h2>楽しみ方を選択してください</h2>
+                    <div class="mood_options">
+                        <div class="mood_option" data-value="初心者歓迎" data-image="{{ asset('assets/images/logos/biginner.png') }}">
+                            <img src="{{ asset('assets/images/logos/biginner.png') }}" alt="初心者歓迎">
+                            <span>初心者歓迎</span>
+                        </div>
+                        <div class="mood_option" data-value="ゆる～く運動" data-image="{{ asset('assets/images/logos/nonbiri.png') }}">
+                            <img src="{{ asset('assets/images/logos/nonbiri.png') }}" alt="ゆる～く運動">
+                            <span>ゆる～く運動</span>
+                        </div>
+                        <div class="mood_option" data-value="ダイエット" data-image="{{ asset('assets/images/logos/diet.png') }}">
+                            <img src="{{ asset('assets/images/logos/diet.png') }}" alt="ダイエット">
+                            <span>ダイエット</span>
+                        </div>
+                        <div class="mood_option" data-value="経験者歓迎" data-image="{{ asset('assets/images/logos/fire.png') }}">
+                            <img src="{{ asset('assets/images/logos/fire.png') }}" alt="経験者歓迎">
+                            <span>経験者歓迎</span>
+                        </div>
+                        <div class="mood_option" data-value="試合がしたい" data-image="{{ asset('assets/images/logos/battle.png') }}">
+                            <img src="{{ asset('assets/images/logos/battle.png') }}" alt="試合がしたい">
+                            <span>試合がしたい</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 募集人数 -->
-            <div class="selector people_number">
+            <div class="selector people_number" id="number_selector">
                 <div class="image_container">
-                    <img class="people_number_logo"src="{{ asset('assets/images/logos/humans_logo.svg') }}" alt="人数">
+                    <img id="selected_number_image" class="people_number_logo" src="{{ asset('assets/images/logos/humans_logo.svg') }}" alt="人数">
                 </div>
-                <label for="recruit_number">募集人数</label>
-                <input type="number" name="recruit_number" id="recruit_number" min="1" required>
+                <input type="hidden" name="recruit_number" id="recruit_number" value="">
+                <label id="selected_number_label">募集人数</label>
+            </div>
+
+            <!-- 募集人数オーバーレイ -->
+            <div class="overlay" id="number_overlay">
+                <div class="overlay_content">
+                    <button class="close_button" id="close_number_overlay">×</button>
+                    <h2>募集人数を入力してください</h2>
+                    <input type="number" id="number_input" min="1" placeholder="人数を入力" style="width: 100%; padding: 8px; font-size: 16px; margin-top: 12px;">
+                    <button id="confirm_number" class="submit" style="margin-top: 12px;">決定</button>
+                </div>
             </div>
 
             <!-- 日時 -->
-            <div class="selector recruitment_date">
+            <div class="selector recruitment_date" id="date_selector">
                 <div class="image_container">
-                    <img class="recruitment_date_logo"src="{{ asset('assets/images/logos/clockIcon_logo.svg') }}" alt="日時">
+                    <img id="selected_date_image" class="recruitment_date_logo"src="{{ asset('assets/images/logos/clockIcon_logo.svg') }}" alt="日時">
                 </div>
-                <label for="scheduled_at">日時</label>
-                <input type="datetime-local" name="scheduled_at" id="scheduled_at" required>
+                <input type="hidden" name="scheduled_at" id="scheduled_at" value="">
+                <label id="selected_date_label">日時</label>
+            </div>
+
+            <!-- 日時オーバーレイ -->
+            <div class="overlay" id="date_overlay">
+                <div class="overlay_content">
+                    <button class="close_button" id="close_date_overlay">×</button>
+                    <h2>日時を選択してください</h2>
+                    <input type="datetime-local" id="date_input" style="width: 100%; padding: 8px; font-size: 16px; margin-top: 12px;">
+                    <button id="confirm_date" class="submit" style="margin-top: 12px;">決定</button>
+                </div>
             </div>
 
             <!-- 募集タイトル -->
