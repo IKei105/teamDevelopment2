@@ -1,3 +1,4 @@
+/* 全体背景・フォントなど */
 body {
     margin: 0;
     font-family: sans-serif;
@@ -40,7 +41,7 @@ body {
     z-index: 10;
 }
 
-/* タイトル周り */
+/* タイトル・アイコン・ボタン */
 .detail-header {
     display: flex;
     align-items: center;
@@ -56,10 +57,11 @@ body {
 }
 
 .card-title {
+    padding-left: 20px;
     font-size: 20px;
     font-weight: bold;
     margin: 0;
-    text-align: center;
+    text-align: left;
     flex: 1;
 }
 
@@ -72,15 +74,18 @@ body {
     font-weight: bold;
 }
 
-/* 情報ブロック全体 */
+/* 情報ブロック：中央寄せ・中は左揃え */
 .info-section {
+    width: 100%;
+    max-width: 520px;       /* ← 中央寄りに見える幅 */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    align-items: center;
+    align-items: flex-start; /* ← 中は左揃え */
 }
 
-/* アイコン左・テキスト右の横並び */
+/* 各項目：アイコン→テキスト */
 .info-item {
     display: flex;
     flex-direction: row;
@@ -89,13 +94,11 @@ body {
     text-align: left;
 }
 
-/* アイコンサイズ */
 .info-item img {
     width: 20px;
     height: 20px;
 }
 
-/* テキスト */
 .info-item p {
     margin: 0;
     line-height: 1.5;
