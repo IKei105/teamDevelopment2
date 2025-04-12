@@ -23,7 +23,7 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 // メッセージ関連
-//メッセージ一覧
+// メッセージ一覧
 Route::get('/messages', [MessageController::class, 'list'])->middleware('auth')->name('messages.list');
 //他のユーザーとのメッセージを開く
 Route::get('/messages/{user}', [MessageController::class, 'show'])->middleware('auth')->name('messages.show');
