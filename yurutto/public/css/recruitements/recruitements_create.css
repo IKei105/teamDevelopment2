@@ -156,3 +156,49 @@ label{
     border-radius: 50px;
 
 }
+/* 地域選択 */
+.area_options {
+    max-height: 400px; /* スクロール用高さ */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.area_option {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.area_option:hover {
+    background-color: #FFE680;
+}
+/* 楽しみ方 */
+.mood_options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.mood_option {
+    cursor: pointer;
+    text-align: center;
+}
+
+.mood_option img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.mood_option:hover img {
+    border-color: #FFD81D;
+}
