@@ -46,6 +46,7 @@ Route::get('/index', [RecruitmentController::class, 'index'])->name('recruitment
 Route::get('/detail/{id}', [RecruitmentController::class, 'show'])->name('recruitments.show');
 
 //自分の登録情報を出力
-Route::get('/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
+Route::get('/profile', [UserController::class, 'showProfile'])->middleware('auth');
+
 
 Route::post('/participate', [ParticipationController::class, 'store'])->middleware('auth');

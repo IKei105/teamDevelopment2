@@ -69,3 +69,155 @@ body {
     border-left: 4px solid #fcd949;
     padding-left: 10px;
 }
+
+/* 募集カード共通 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section {
+    width: 550px;
+    margin: 20px auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-section {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.date-area, .num, .mood {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+}
+
+/* ボタンスタイル */
+.btn-detail,
+.btn-message,
+.btn-participate {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-detail {
+    background-color: #FFD81D;
+}
+
+.btn-message {
+    background-color: #1bc31b;
+}
+
+.btn-participate {
+    background-color: #AFE7FF;
+}
+
+/* 評価フォーム */
+.rating-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.rating-wrapper.active {
+    max-height: 160px;
+    opacity: 1;
+}
+
+.rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.rating-stars input[type="radio"] {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.rating-stars input[type="radio"]:checked ~ label,
+.rating-stars input[type="radio"]:checked + label {
+    color: gold;
+}
+
+
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse; /* ← 並びを逆にするポイント */
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.rating-stars input[type="radio"] {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+/* 選択された星から右の星を金色に */
+.rating-stars input[type="radio"]:checked ~ label {
+    color: gold;
+}
+
+.rating-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+}
+
+.rating-wrapper.active {
+    max-height: 200px;
+    opacity: 1;
+}
