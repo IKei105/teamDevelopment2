@@ -21,4 +21,10 @@ class Recruitment extends Model
         'mood',
         'comment',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

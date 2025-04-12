@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #ffeb3b;
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+}
+
+/* 白カード全体 */
+.detail-card {
+    width: 600px;
+    margin: -40px auto 0;
+    background-color: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* タイトル周り */
+.detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.main-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-participate {
+    background-color: #00caca;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* 情報ブロック全体 */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+/* アイコン左・テキスト右の横並び */
+.info-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+/* アイコンサイズ */
+.info-item img {
+    width: 20px;
+    height: 20px;
+}
+
+/* テキスト */
+.info-item p {
+    margin: 0;
+    line-height: 1.5;
+    text-align: left;
+}

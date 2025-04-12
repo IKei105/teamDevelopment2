@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+
 // ログイン関連
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
@@ -38,6 +39,10 @@ Route::get('/search/result', [SearchController::class, 'search'])->name('search.
 Route::get('/recruitments/create', [RecruitmentController::class, 'create'])->name('recruitments.create');
 //募集一覧
 Route::post('/recruitments', [RecruitmentController::class, 'store'])->name('recruitments.store');
+//募集投稿一覧
+Route::get('/index', [RecruitmentController::class, 'index'])->name('recruitments.index');
+//募集詳細
+Route::get('/detail/{id}', [RecruitmentController::class, 'show'])->name('recruitments.show');
 
 //自分の登録情報を出力
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');

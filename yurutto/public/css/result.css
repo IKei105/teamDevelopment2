@@ -1,0 +1,41 @@
+.latest {
+    text-align: center;
+    width: 600px;
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    scroll-snap-type: x mandatory; /* オプション：スナップスクロール */
+}
+
+.latest-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 300px;
+    background-color: aqua;
+    scroll-snap-align: start; /* オプション：スナップで整列 */
+    border-radius: 8px;
+}
+
+.latest-icon, .latest-title, .latest-button {
+    text-align: center;
+}
+
+.latest-icon {
+    padding-top: 20px;
+    margin-bottom: 70px;
+}
+
+.latest-icon img {
+    width: 150px;
+}
+
+.latest-button a{
+    
+}
+
+
+
