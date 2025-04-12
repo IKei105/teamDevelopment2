@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ asset('css/search/search_result.css') }}">
     <link rel="stylesheet" href="{{ asset('css/result.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>募集投稿フォーム</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
                         <p>のんびり犬の散歩</p>
                     </div>
                     <div class="latest-button">
-                        <a href="">参加する</a>
+                        <a data-id="{{ $item->id }}" href="">参加する</a>
                     </div>
                 </div>
             @endforeach
@@ -54,8 +55,8 @@
                             </div> 
                         </div>
                         <div class="button-section">
-                            <a class="btn-participate" href="">参加する</a>
                             <a href="#" class="btn-detail">詳細</a>
+                            <a href="#" class="btn-participate" data-id="{{ $item->id }}" data-user="{{ $item->user_id }}">参加する</a>
                         </div>
                     </div>
                 </li>
@@ -63,3 +64,4 @@
         </ul>
     @endif
 </div>
+<script src="{{ asset('js/participate.js') }}"></script>

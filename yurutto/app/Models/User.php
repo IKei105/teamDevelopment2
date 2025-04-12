@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Participation;
 
 class User extends Authenticatable
 {
@@ -51,4 +52,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Userモデルに
+    public function participations()
+    {
+        return $this->hasMany(Participation::class);
+    }
+
+    // Recruitmentモデルに
+    // public function participations()
+    // {
+    //     return $this->hasMany(Participation::class);
+    // }
+
 }

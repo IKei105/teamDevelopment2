@@ -41,7 +41,7 @@ class RecruitmentController extends Controller
             'comment' => $request->comment,
         ]);
 
-        return redirect('/')->with('success', '募集を投稿しました');
+        return redirect('/index')->with('success', '募集を投稿しました');
     }
 
     public function index()
@@ -52,6 +52,7 @@ class RecruitmentController extends Controller
 
         if (Auth::check()) {
             $user = Auth::user();
+
         
             $recommended = Recruitment::where('sport_type', $user->favorite_sport)
                 ->where('prefecture', $user->residence)

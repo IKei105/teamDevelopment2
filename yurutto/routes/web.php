@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\RecruitmentController;
+use App\Http\Controllers\ParticipationController;
 
 //登録画面へ遷移する
 Route::get('/register', function () {
@@ -46,3 +47,5 @@ Route::get('/detail/{id}', [RecruitmentController::class, 'show'])->name('recrui
 
 //自分の登録情報を出力
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
+
+Route::post('/participate', [ParticipationController::class, 'store'])->middleware('auth');

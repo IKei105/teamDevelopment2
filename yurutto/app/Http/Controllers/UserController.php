@@ -52,7 +52,7 @@ class UserController extends Controller
 
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::login($user);
-            return redirect('/messages'); // チャット一覧にリダイレクト
+            return redirect('/index'); // チャット一覧にリダイレクト
         }
 
         return back()->withErrors([
