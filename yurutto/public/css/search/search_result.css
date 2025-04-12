@@ -32,12 +32,22 @@ p {
     margin: 0 auto;
 }
 
+ul {
+    margin-top: 50px;
+}
+
 .section {
+    text-align: center;
+    margin: 0 auto;
+    width: 550px;
     display: flex;
     justify-content: space-between;
     /* background-color: aquamarine; */
     height: 100px;
     padding: 10px 0;
+    border-radius: 15px;
+    background-color: white;
+    margin-bottom: 15px;
 }
 
 .icon-section {
@@ -101,4 +111,15 @@ p {
 
 .btn-participate {
     background-color: #AFE7FF;
+}
+
+.btn-message {
+    background-color: rgb(27, 195, 27);
+    width: 150px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 12px; /* ← 角を丸くする */
 }
