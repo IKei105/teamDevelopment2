@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>新規募集</title>
+@extends('components.layout')
+
+@section('title', '新規募集')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/recruitements/recruitements_create.css') }}">
-</head>
-<body>
+@endsection
+
+@section('content')
     <div class="recruitement_container">
         <h1>募集する</h1>
         <form action="{{ route('recruitments.store') }}" method="POST">
@@ -188,6 +189,4 @@
 
     <!-- オーバーレイJS -->
     <script src="{{ asset('js/recruitments/selector.js') }}"></script>
-</body>
-
-</html>
+@endsection
