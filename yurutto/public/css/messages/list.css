@@ -4,20 +4,34 @@ p {
     margin: 0;
 }
 
-body {
+body, h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.main-section {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.main-section {
-    text-align: center;
+.header {
+    display: flex;
+    justify-content: center; /* 横方向中央 */
+    align-items: center;     /* 縦方向中央 */
+    background-color: #FFD81D;
+    height: 100px;
+}
+
+
+header h1 {
+    line-height: 100px;
 }
 
 /* 各メッセージ行全体の枠 */
 .message-section {
     display: flex;
     align-items: center;
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 100px;
     width: 100%;
     padding: 0 10px;
@@ -36,8 +50,8 @@ body {
 
 /* 丸いアイコン画像 */
 .user-profile-image img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -65,7 +79,8 @@ body {
     font-weight: bold;
     font-size: 14px;
     position: relative;
-    top: 6px;
+    top: 20px;
+    padding-left: 5px;
 }
 
 /* 最新メッセージ（アイコンの中間〜下限に） */
@@ -73,6 +88,7 @@ body {
     font-size: 13px;
     color: #555;
     position: relative;
+    padding-left: 5px;
     top: 28px;
 }
 
@@ -83,7 +99,7 @@ body {
     font-size: 12px;
     color: #666;
     position: relative;
-    top: 6px; /* ← ユーザー名と同じ高さに揃える */
+    top: 1px; /* ← ユーザー名と同じ高さに揃える */
 }
 
 .message-section a {
@@ -93,4 +109,8 @@ body {
     color: inherit; /* テキストカラー継承 */
     width: 100%;
     height: 100%;
+}
+
+.username p {
+    text-align: left;
 }

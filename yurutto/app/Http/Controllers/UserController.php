@@ -33,7 +33,7 @@ class UserController extends Controller
             
         ]);
     
-        return redirect('/login');
+        return redirect('/index');
     }
 
     public function showLoginForm()

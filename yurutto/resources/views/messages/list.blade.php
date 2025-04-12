@@ -7,6 +7,9 @@
 </head>
 <body>
     <div class="main-section">
+        <div class="header">
+            <h1>Yurutto</h1>
+        </div>
         @foreach($latestMessages as $message)
             @php
                 $isSender = $message->sender_id === $userId;

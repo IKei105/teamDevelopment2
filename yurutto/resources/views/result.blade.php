@@ -8,10 +8,11 @@
     <title>募集投稿フォーム</title>
 </head>
 <body>
+
+<div class="main-section">
 <div class="up">
     <h1>Yurutto</h1>
 </div>
-<div class="main-section">
     <div class="latest">
         @if($recommended->isEmpty())
             <p>該当する募集はありませんでした。</p>
@@ -22,7 +23,7 @@
                         <img src="{{ asset('storage/userProfileImages/neko.jpeg') }}" alt="">
                     </div>
                     <div class="latest-title">
-                        <p>タイトルです（ ＾ω＾）</p>
+                        <p>のんびり犬の散歩</p>
                     </div>
                     <div class="latest-button">
                         <a href="">参加する</a>
