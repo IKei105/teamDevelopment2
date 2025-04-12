@@ -6,11 +6,21 @@ textarea:focus {
     outline: none;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
 body {
     margin: 0;
-    margin-bottom: 500px;
-    
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
 }
+
+
 
 .main-section {
     text-align: center;
@@ -20,6 +30,8 @@ body {
       rgba(255, 168, 29, 0.3),  /* FFA81D, 透明度30% */
       rgba(255, 216, 29, 0.3)   /* FFD81D, 透明度30% */
     );
+    padding-bottom: 100px;
+
 }
 
 .section {
@@ -27,8 +39,10 @@ body {
 }
 
 .title {
+    height: 100px;
     font-family: 'Kanit', sans-serif;
     color: #FFA81D;
+    line-height: 100px;
 }
 
 .userid-input, .username-input, .password-input, .residence-select, .favorite-input, .mood-input {
@@ -60,10 +74,12 @@ body {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    /* margin-bottom: 50px; */
 }
 
 .logout {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 550px;
 }
 
 .hidden {

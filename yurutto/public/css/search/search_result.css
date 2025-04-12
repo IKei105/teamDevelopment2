@@ -35,13 +35,13 @@ p {
 .section {
     display: flex;
     justify-content: space-between;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     height: 100px;
     padding: 10px 0;
 }
 
 .icon-section {
-    background-color: black;
+    /* background-color: black; */
 }
 
 .icon {

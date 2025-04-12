@@ -1,3 +1,8 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
 .latest {
     text-align: center;
     width: 600px;
@@ -12,13 +17,16 @@
 }
 
 .latest-item {
-    flex: 0 0 auto;
     width: 200px;
     height: 300px;
-    background-color: aqua;
-    scroll-snap-align: start; /* オプション：スナップで整列 */
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+
+    margin-left: 16px; /* ← これだけ追加！ */
 }
+
 
 .latest-icon, .latest-title, .latest-button {
     text-align: center;
@@ -33,9 +41,43 @@
     width: 150px;
 }
 
-.latest-button a{
-    
+
+
+.latest-button a {
+    margin-top: 20px;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background-color: #FFA81D;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
+.latest-button a:hover {
+    background-color: #e29400;
+}
 
+.up {
+    height: 100px;
+}
 
+.up h1 {
+    line-height: 100px;
+}
+
+.main-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(
+        to bottom,
+        #FFD81D 0px,
+        #FFD81D 320px,
+        #EEEEEE 320px,
+        #EEEEEE 100%
+    );
+}
