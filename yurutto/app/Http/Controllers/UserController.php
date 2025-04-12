@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Carbon\Carbon;
 
 
 class UserController extends Controller
@@ -71,5 +72,24 @@ class UserController extends Controller
         $user = auth()->user(); // ログイン中のユーザー情報を取得
         return view('profile', compact('user'));
     }
+
+    public function showProfile()
+    {
+        $user = Auth::user();
+        $today = Carbon::today();
+
+        $participated = $user->participatedRecruitments()->get();
+
+        $past = $participated->filter(function ($item) use ($today) {
+            return Carbon::parse($item->scheduled_at)->lt($today);
+        });
+
+        $ongoing = $participated->filter(function ($item) use ($today) {
+            return Carbon::parse($item->scheduled_at)->gte($today);
+        });
+
+        return view('profile', compact('user', 'past', 'ongoing'));
+    }
+
 
 }

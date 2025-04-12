@@ -65,4 +65,10 @@ class User extends Authenticatable
     //     return $this->hasMany(Participation::class);
     // }
 
+    public function participatedRecruitments()
+    {
+        return $this->belongsToMany(Recruitment::class, 'participations');
+    }
+
+
 }
