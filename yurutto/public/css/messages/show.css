@@ -3,9 +3,14 @@ ul, li, p {
   margin: 0;
   padding: 0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 ul, li {
   list-style: none;
+}
+
+h1, p , a{
+  font-family: 'Kanit', sans-serif;
 }
 
 /* チャット画面全体 */
@@ -50,7 +55,7 @@ ul, li {
 }
 
 .chat.me .mes {
-  background: #5AC323;
+  background: #21ff1d;
 }
 
 /* メッセージ入力エリア（横並び・中央） */
@@ -84,4 +89,114 @@ ul, li {
 
 .message-input button:hover {
   background-color: #00a0a0;
+}
+
+.message-input {
+  position: fixed;
+  bottom: 60px; /* ← フッターの高さ + 少し余白 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px; /* フッターと揃える場合 */
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 999; /* フッターより上に表示 */
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.message-input button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background: #c8c8c8;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  background-color: #fcd949;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0 10px;
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  background-color: #FFD81D;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  width: 600px;
+  left: 50%;
+  transform: translateX(-50%); /* ← 横中央に配置 */
+
+  background: #fff;
+  border-top: 1px solid #aaa;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  z-index: 1000;
+
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+
+.footer-link-wrapper {
+  display: none;
+}
+
+
+.room {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #eee;
+  padding: 10px;
+  padding-bottom: 800px; /* ← ここ追加（入力欄＋フッターの高さ分） */
+}
+
+.footer {
+  /* その他スタイルはそのまま */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+ul {
+  padding-top: 70px;
 }

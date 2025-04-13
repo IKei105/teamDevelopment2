@@ -22,12 +22,13 @@ class User extends Authenticatable
         'userid',
         'name',
         'password',
+        'profile_image',
         'residence',
         'favorite_sport',
         'mood',
         'introduction',
         'rating',
-        'profile_image',
+        'rate_count',
     ];
 
     /**

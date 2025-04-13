@@ -20,6 +20,11 @@ body {
     overflow-x: hidden;
 }
 
+p, a {
+    font-family: 'Kanit', sans-serif;
+
+}
+
 
 
 .main-section {
@@ -84,4 +89,8 @@ body {
 
 .hidden {
     display: none;
+}
+
+.profile-image img {
+    width: 120px;
 }

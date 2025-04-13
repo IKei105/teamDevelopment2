@@ -13,7 +13,7 @@
 
             <div class="section profile-image">
                 <label for="profile_image">
-                    <img src="{{ asset('storage/userProfileImages/neko.jpeg') }}" alt="">
+                    <img src="{{ asset('assets/images/logos2/sample.png') }}" alt="">
                 </label>
                 <input class="input hidden" type="file" id="profile_image" name="profile_image" accept="image/*">
             </div>
@@ -86,9 +86,18 @@
                     <option value="沖縄県">沖縄県</option>
                 </select>
             </div>
-
             <div class="section favorite_sport">
-                <input class="favorite-input" type="text" id="favorite_sport" placeholder="好きなスポーツ" name="favorite_sport">
+                <select class="mood-input" name="favorite_sport">
+                    <option value="">好きなスポーツを選択</option>
+                    <option value="サッカー">サッカー</option>
+                    <option value="バドミントン">バドミントン</option>
+                    <option value="バスケットボール">バスケットボール</option>
+                    <option value="ジム">ジム</option>
+                    <option value="ボウリング">ボウリング</option>
+                    <option value="野球・キャッチボール">野球・キャッチボール</option>
+                    <option value="ペットと運動">ペットと運動</option>
+                    <option value="その他">その他</option>
+                </select>
             </div>
 
             <div class="section mood">
@@ -109,4 +118,22 @@
         </div>
 
     </body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const input = document.getElementById('profile_image');
+        const preview = document.querySelector('.profile-image img');
+
+        input.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+</script>
+
 </html>

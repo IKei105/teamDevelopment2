@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 .profile-container {
     width: 600px;
     background-color: white;
@@ -13,6 +13,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1, p, a {
+    font-family: 'Kanit', sans-serif;
 }
 
 .profile-header {
@@ -47,7 +51,7 @@ body {
 }
 
 .profile-icon img {
-    width: 60%;
+    width: 120px;
     height: auto;
 }
 
@@ -220,4 +224,8 @@ ul {
 .rating-wrapper.active {
     max-height: 200px;
     opacity: 1;
+}
+
+.profile-container {
+    padding-bottom: 100px;
 }

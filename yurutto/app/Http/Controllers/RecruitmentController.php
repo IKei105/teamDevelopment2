@@ -14,6 +14,8 @@ class RecruitmentController extends Controller
 
     public function store(Request $request)
     {
+
+        //dd($request);
         // バリデーション
         $request->validate([
             'title' => 'required|string|max:255', // ← タイトルを追加

@@ -17,8 +17,15 @@ class UserController extends Controller
     {
     
         $imagePath = null;
+
         if ($request->hasFile('profile_image')) {
-            $imagePath = $request->file('profile_image')->store('userProfileImages', 'public');
+            // 指定したパスに保存（storageではなくassetsに保存するならpublic配下に直で置く必要があります）
+            $filename = uniqid() . '.' . $request->file('profile_image')->getClientOriginalExtension();
+            $request->file('profile_image')->move(public_path('assets/images/users'), $filename);
+            $imagePath = 'assets/images/users/' . $filename;
+        } else {
+            // デフォルト画像
+            $imagePath = 'assets/images/logos2/sample.png';
         }
     
         User::create([

@@ -8,7 +8,8 @@
 @section('content')
     <div class="recruitement_container">
         <h1>投稿を検索</h1>
-        <form id="search_form" action="{{ route('recruitments.store') }}" method="POST">
+        <form id="search_form" action="{{ route('search.result') }}" method="GET">
+
         @csrf
             <!-- 種目 -->
             <div class="selector sport_type" id="sport_type_selector">

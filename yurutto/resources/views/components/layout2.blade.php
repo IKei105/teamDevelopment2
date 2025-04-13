@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'Yurutto')</title>
-    <link rel="stylesheet" href="{{ asset('css/layout/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/layouts2.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     @yield('css')
 </head>
 <body>
     <!-- ヘッダー -->
-    <header class="header">
+    <!-- <header class="header">
         <h1 class="header-title">Yurutto</h1>
-    </header>
+    </header> -->
 
     <!-- メインコンテンツは各ページで入れる -->
     @yield('content')
@@ -41,5 +43,6 @@
             <small>検索</small>
         </a>
     </footer>
+    @yield('js') 
 </body>
 </html>

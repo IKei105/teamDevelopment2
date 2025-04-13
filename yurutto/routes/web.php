@@ -6,6 +6,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\RecruitmentController;
 use App\Http\Controllers\ParticipationController;
+use App\Http\Controllers\RatingController;
 
 //登録画面へ遷移する
 Route::get('/register', function () {
@@ -49,4 +50,7 @@ Route::get('/detail/{id}', [RecruitmentController::class, 'show'])->name('recrui
 Route::get('/profile', [UserController::class, 'showProfile'])->middleware('auth');
 
 
+
 Route::post('/participate', [ParticipationController::class, 'store'])->middleware('auth');
+
+Route::post('/rate', [RatingController::class, 'store']);

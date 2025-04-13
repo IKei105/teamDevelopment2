@@ -3,6 +3,17 @@ body, h1 {
     padding: 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEE; /* ← 背景を常に灰色に */
+}
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+h1, p, a {
+    font-family: 'Kanit', sans-serif;
+}
+
 .latest {
     text-align: center;
     width: 600px;
@@ -14,6 +25,7 @@ body, h1 {
     max-width: 600px;
     margin: 0 auto;
     scroll-snap-type: x mandatory; /* オプション：スナップスクロール */
+
 }
 
 .latest-item {
@@ -33,12 +45,13 @@ body, h1 {
 }
 
 .latest-icon {
-    padding-top: 20px;
-    margin-bottom: 30px;
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 
 .latest-icon img {
-    width: 150px;
+    width: 120px;
+    height: 85px;
 }
 
 
@@ -73,6 +86,7 @@ body, h1 {
 .main-section {
     max-width: 600px;
     margin: 0 auto;
+    min-height: 100vh; /* ← 画面の高さを最低限確保 */
     background: linear-gradient(
         to bottom,
         #FFD81D 0px,
@@ -82,3 +96,131 @@ body, h1 {
     );
 }
 
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%); /* ← 横中央に配置 */
+
+    background: #fff;
+    border-top: 1px solid #aaa;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 1000;
+
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+
+
+.main-section {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    z-index: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white; /* 外側の背景は白 */
+    font-family: 'Kanit', sans-serif;
+}
+
+.background-wrapper {
+    background: linear-gradient(
+        to bottom,
+        #FFD81D 0px,
+        #FFD81D 320px,
+        #EEEEEE 320px,
+        #EEEEEE 100%
+    );
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-section {
+    width: 600px;
+    min-height: 100vh;
+    padding: 0 16px;
+}
+
+.info-section {
+    text-align: left; /* ← 追加 */
+}
+
+
+/* 情報ブロック（おすすめ一覧など）のテキスト左寄せ強化 */
+.info-section {
+    text-align: left;
+    padding-left: 8px; /* ← ここで左に寄せる！ */
+}
+
+/* 中のテキストが中央寄せになっていた場合に備えて */
+.info-section p,
+.info-section .title,
+.info-section .date,
+.info-section .area,
+.info-section .num,
+.info-section .mood {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.info-section {
+    text-align: left;
+}
+
+.info-section {
+    text-align: left;
+    padding-left: 0;       /* 念のためリセット */
+    margin-left: 0;        /* 念のためリセット */
+    flex: 1;               /* ← これが重要！横幅を持たせる */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.title, .date, .area, .num, .mood {
+    text-align: left;
+    margin-left: 0;   /* 念のため */
+}
+
+
+.icon-section {
+    width: 100px;              /* ← この幅は固定でも可 */
+    display: flex;
+    align-items: center;       /* ← 縦中央揃え */
+    justify-content: center;   /* ← 横中央揃え（任意） */
+    margin-right: 12px;        /* ← ★ ここがポイント！ */
+}
+
+.section {
+    display: flex;
+    align-items: center;  /* ← これで縦位置が揃いやすくなる */
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+
+.main-section {
+    padding-bottom: 1500px;
+}
+
+.latest-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}

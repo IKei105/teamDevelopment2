@@ -3,7 +3,7 @@ ul {
     padding: 0;
     margin: 0;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 a {
     text-decoration: none;
 }
@@ -13,6 +13,9 @@ p {
     padding: 0;
 }
 
+h1, p, a {
+    font-family: 'Kanit', sans-serif;
+}
 
 .up {
     text-align: center;
@@ -43,7 +46,7 @@ ul {
     display: flex;
     justify-content: space-between;
     /* background-color: aquamarine; */
-    height: 100px;
+    height: 125px;
     padding: 10px 0;
     border-radius: 15px;
     background-color: white;
@@ -53,7 +56,7 @@ ul {
 .icon {
     padding-left: 25px;
     width: 100px;        /* 画像サイズ：好きな値に変更可能 */
-    height: 100px;
+    height: auto;
     object-fit: cover;   /* 中央でトリミングしてバランス良く表示 */
     border-radius: 50%;  /* ← これがまんまるの決め手！ */
     display: block;      /* 中央寄せやブロック要素として扱いやすくする */
@@ -118,4 +121,31 @@ ul {
     text-align: center;
     line-height: 40px;
     border-radius: 12px; /* ← 角を丸くする */
+}
+
+
+
+
+
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%); /* ← 横中央に配置 */
+
+    background: #fff;
+    border-top: 1px solid #aaa;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 1000;
+
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
 }

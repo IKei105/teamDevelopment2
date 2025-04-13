@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('favorite_sport')->nullable(); // 好きなスポーツ
             $table->string('mood')->nullable();          // 温度感（ゆるく、ガチなど）
             $table->string('introduction')->nullable();  // 自己紹介
-            $table->integer('rating')->default(0);       // 評価（int）
+            $table->float('rating')->default(0);       // 評価の平均値
+            $table->unsignedInteger('rate_count')->default(0); // 評価された回数
             $table->timestamps();
         });
     }

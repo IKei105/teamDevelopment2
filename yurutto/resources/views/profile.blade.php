@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>プロフィール</title>
+@extends('components.layout2')
+
+@section('title', 'プロフィール')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-</head>
-<body>
+@endsection
+
+@section('content')
+@php
+    $iconMap = [
+        'サッカー' => 'assets/images/pictogram/football.png',
+        'バスケットボール' => 'assets/images/pictogram/basket.png',
+        'バドミントン' => 'assets/images/pictogram/bato.png',
+        'ジム' => 'assets/images/pictogram/runnerMachine.png',
+        'ボウリング' => 'assets/images/pictogram/bowling.png',
+        '野球・キャッチボール' => 'assets/images/pictogram/glove.png',
+        'ペットと運動' => 'assets/images/pictogram/dog.png',
+        'その他' => 'assets/images/pictogram/run2.png',
+    ];
+@endphp
+
 <div class="profile-container">
     <div class="profile-header">
         <h1>Yurutto</h1>
         <div class="profile-icon">
-            <img src="{{ asset('storage/' . $user->profile_image) }}" alt="アイコン画像">
+            <img src="{{ asset($user->profile_image) }}" alt="アイコン画像">
         </div>
     </div>
 
@@ -34,7 +47,7 @@
                     <li>
                         <div class="section">
                             <div class="icon-section">
-                                <img class="icon" src="{{ asset('storage/' . ($item->user->profile_image ?? 'userProfileImages/neko.jpeg')) }}" alt="">
+                                <img class="icon" src="{{ asset($iconMap[$item->sport_type] ?? 'assets/images/pictogram/run2.png') }}" alt="{{ $item->sport_type }}">
                             </div>
                             <div class="info-section">
                                 <p class="title">{{ $item->title }}</p>
@@ -66,7 +79,7 @@
                     <li>
                         <div class="section" data-id="{{ $item->id }}">
                             <div class="icon-section">
-                                <img class="icon" src="{{ asset('storage/' . ($item->user->profile_image ?? 'userProfileImages/neko.jpeg')) }}" alt="">
+                                <img class="icon" src="{{ asset($iconMap[$item->sport_type] ?? 'assets/images/pictogram/run2.png') }}" alt="{{ $item->sport_type }}">
                             </div>
                             <div class="info-section">
                                 <p class="title">{{ $item->title }}</p>
@@ -76,7 +89,6 @@
                             </div>
 
                             <div class="button-section">
-                                <!-- 評価フォーム -->
                                 <div class="rating-wrapper">
                                     <form method="POST" action="/rate">
                                         @csrf
@@ -90,8 +102,6 @@
                                         <button class="btn-participate" type="submit">評価を送信する</button>
                                     </form>
                                 </div>
-
-                                <!-- 評価ボタン -->
                                 <button class="btn-detail btn-rate-toggle">評価する</button>
                             </div>
                         </div>
@@ -101,33 +111,12 @@
         @endif
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const rateButtons = document.querySelectorAll('.btn-rate-toggle');
-    const sections = document.querySelectorAll('.section');
-
-    rateButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const section = button.closest('.section');
-            const wrapper = section.querySelector('.rating-wrapper');
-            wrapper.classList.add('active');
-            button.style.display = 'none';
-        });
-    });
-
-    document.addEventListener('click', (e) => {
-        sections.forEach(section => {
-            if (!section.contains(e.target)) {
-                const wrapper = section.querySelector('.rating-wrapper');
-                const button = section.querySelector('.btn-rate-toggle');
-                wrapper.classList.remove('active');
-                button.style.display = 'block';
-            }
-        });
-    });
-});
-</script>
-</body>
-</html>
+@endsection
+@section('js')
+    <script>
+        const CHAT_CONFIG = {
+            csrfToken: @json(csrf_token()),
+        };
+    </script>
+    <script src="{{ asset('js/profile.js') }}"></script>
+@endsection

@@ -1,3 +1,5 @@
+console.log("こん");
+
 document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('send-button');
     const input = document.getElementById('message-input');

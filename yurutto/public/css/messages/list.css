@@ -1,7 +1,12 @@
 /* pタグの初期化 */
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 p {
     padding: 0;
     margin: 0;
+}
+
+h1 , p , a{
+    font-family: 'Kanit', sans-serif;
 }
 
 body, h1 {
@@ -113,4 +118,25 @@ header h1 {
 
 .username p {
     text-align: left;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%); /* ← 横中央に配置 */
+
+    background: #fff;
+    border-top: 1px solid #aaa;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 1000;
+
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
 }

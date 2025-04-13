@@ -4,10 +4,11 @@ body {
     font-family: sans-serif;
     background-color: #f0f0f0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 /* ヘッダー */
 .header {
-    background-color: #ffeb3b;
+    background-color: #FFD81D;
     height: 160px;
     position: relative;
     display: flex;
@@ -16,10 +17,28 @@ body {
     z-index: 1;
 }
 
-.title {
-    font-size: 24px;
-    font-weight: bold;
+h1, p,a {
+    font-family: 'Kanit', sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-top: -20px; /* ← これを追加 */
+}
+
 
 .search-icon {
     position: absolute;
@@ -103,4 +122,42 @@ body {
     margin: 0;
     line-height: 1.5;
     text-align: left;
+}
+
+
+
+
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%); /* ← 横中央に配置 */
+
+    background: #fff;
+    border-top: 1px solid #aaa;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 1000;
+
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+
+.btn-message {
+    background-color: rgb(27, 195, 27);
+    width: 150px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 12px; /* ← 角を丸くする */
 }

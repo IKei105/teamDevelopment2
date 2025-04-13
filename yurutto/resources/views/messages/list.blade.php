@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
+@extends('components.layout2') {{-- フッター付き共通レイアウト --}}
+
+@section('title', 'チャット一覧')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/messages/list.css') }}">
-    <title>チャット一覧</title>
-</head>
-<body>
+@endsection
+
+@section('content')
     <div class="main-section">
         <div class="header">
             <h1>Yurutto</h1>
@@ -26,7 +27,7 @@
             <div class="message-section">
                 <a href="{{ route('messages.show', ['user' => $otherUser->id]) }}">
                     <div class="user-profile-image">
-                        <img src="{{ asset('storage/userProfileImages/neko.jpeg') }}" alt="">
+                        <img src="{{ asset('storage/' . ($otherUser->profile_image ?? 'userProfileImages/neko.jpeg')) }}" alt="">
                     </div>
                     <div class="message-info">
                         <div class="user-latest-message">
@@ -41,5 +42,4 @@
             </div>
         @endforeach
     </div>
-</body>
-</html>
+@endsection
